@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    >
+
+    <ImageView
+        android:layout_width="420dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/gymgoods" />
+
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="이름"
+        android:background="@drawable/textbarimage"
+        android:padding="5dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/UserName"
+        android:imeOptions="actionNext"
+        />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="이메일 주소"
+        android:inputType="textWebEmailAddress"
+        android:background="@drawable/textbarimage"
+        android:padding="5dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/UserEmail"
+        android:imeOptions="actionNext"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        >
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="아이디(6~20자)"
+            android:inputType="textUri"
+            android:background="@drawable/textbarimage"
+            android:paddingLeft="5dp"
+            android:id="@+id/UserID"
+            android:imeOptions="actionNext"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="중복확인"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/OverlapCheck"
+            android:imeOptions="actionNext"
+            />
+
+
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호"
+        android:inputType="textPassword"
+        android:background="@drawable/textbarimage"
+        android:paddingLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/UserPW"
+        android:imeOptions="actionNext"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8~15자리/영어소문자,숫자 외 금지"/>
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호 확인"
+        android:inputType="textPassword"
+        android:background="@drawable/textbarimage"
+        android:padding="5dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/UserPWCheck"
+        android:imeOptions="actionNext"
+        />
+
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="전화번호(- 없이 숫자만)"
+        android:inputType="phone"
+        android:background="@drawable/textbarimage"
+        android:padding="5dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/UserPhoneNumber"
+        android:imeOptions="actionNext"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_agree"
+        android:textSize="10dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+           <RadioButton
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="동의 함"
+               android:paddingRight="10dp"
+               android:id="@+id/Agree"
+               />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="동의 안 함"
+            android:id="@+id/Disagree"
+            />
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="확인"
+        android:layout_gravity="center"
+        android:id="@+id/CheckAndGoToMain"
+        android:background="#3060B0"
+        />
+
+
+
+
+</LinearLayout>
