@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="420dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/gymgoods" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원정보"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:id="@+id/popupName"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="이름 : "
+        android:textSize="20dp"
+        android:paddingLeft="20dp"
+        />
+    <TextView
+        android:id="@+id/popupID"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="ID : "
+        android:textSize="20dp"
+        android:paddingLeft="20dp"
+        />
+    <TextView
+        android:id="@+id/popupPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="전화번호 : "
+        android:textSize="20dp"
+        android:paddingLeft="20dp"
+        />
+    <TextView
+        android:id="@+id/popupAddress"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="주소 : "
+        android:textSize="20dp"
+        android:paddingLeft="20dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="상품 페이지로 돌아가기"
+        android:id="@+id/backToShopping"
+        android:backgroundTint="#3060b0"/>
+
+
+</LinearLayout>

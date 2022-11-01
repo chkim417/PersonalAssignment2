@@ -49,8 +49,72 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     urls.add(null);
                 }
-                if(urls.indexOf(PWText.getText().toString()) == 0){
+
+                if(IDText.getText().toString().length() == 0){
+                    AlertDialog.Builder msgBuilder = new AlertDialog.Builder(MainActivity.this);
+                    msgBuilder  .setTitle("")
+                            .setMessage("아이디를 입력해주세요")
+                            .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+
+                                }
+                            });
+
+                    AlertDialog msgDlg = msgBuilder.create();
+                    msgDlg.show();
+                }
+
+                else if (json == null){
+                    AlertDialog.Builder msgBuilder = new AlertDialog.Builder(MainActivity.this);
+                    msgBuilder  .setTitle("")
+                            .setMessage("없는 아이디입니다")
+                            .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    IDText.setText("");
+                                }
+                            });
+
+                    AlertDialog msgDlg = msgBuilder.create();
+                    msgDlg.show();
+
+                }
+                else if(PWText.getText().toString().length() == 0){
+                    AlertDialog.Builder msgBuilder = new AlertDialog.Builder(MainActivity.this);
+                    msgBuilder  .setTitle("")
+                            .setMessage("비밀번호를 입력해주세요")
+                            .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+
+                                }
+                            });
+
+                    AlertDialog msgDlg = msgBuilder.create();
+                    msgDlg.show();
+
+                }
+
+                else if(urls.indexOf(PWText.getText().toString()) != 0){
+                    AlertDialog.Builder msgBuilder = new AlertDialog.Builder(MainActivity.this);
+                    msgBuilder  .setTitle("")
+                            .setMessage("비밀번호가 일치하지 않습니다")
+                            .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                PWText.setText("");
+                                }
+                            });
+
+                    AlertDialog msgDlg = msgBuilder.create();
+                    msgDlg.show();
+
+                }
+                else{
                     Intent intent = new Intent(getApplication(),Shopping.class);
+                    intent.putExtra("ID",IDText.getText().toString());
+                    intent.putExtra("isUser", "ISUSER");
                     startActivity(intent);
                     finish();
 
@@ -72,9 +136,27 @@ public class MainActivity extends AppCompatActivity {
         WithoutSingUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplication(),Shopping.class);
-                startActivity(intent);
-                finish();
+                AlertDialog.Builder msgBuilder = new AlertDialog.Builder(MainActivity.this);
+                msgBuilder  .setTitle("비회원으로 상품 보기")
+                            .setMessage("회원 가입 없이 보시겠습니까? ")
+                            .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    Intent intent = new Intent(getApplication(),Shopping.class);
+                                    intent.putExtra("isUser", "ISNOTUSER");
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            })
+                            .setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                                 @Override
+                                 public void onClick(DialogInterface dialogInterface, int i) {
+                            }
+                        });
+
+                AlertDialog msgDlg = msgBuilder.create();
+                msgDlg.show();
+
 
             }
         });
