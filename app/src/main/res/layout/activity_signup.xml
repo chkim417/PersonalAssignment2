@@ -145,6 +145,7 @@
         android:layout_gravity="center"
         android:id="@+id/CheckAndGoToMain"
         android:backgroundTint="#3060B0"
+        android:enabled="false"
         />
 
 

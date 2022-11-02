@@ -56,6 +56,7 @@ public class SignUp extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
@@ -143,6 +144,7 @@ public class SignUp extends AppCompatActivity {
                     msgDlg.show();
 
                 }
+
                  else if(!IsPWFitTheRule){
                     AlertDialog.Builder msgBuilder = new AlertDialog.Builder(SignUp.this)
                             .setTitle("비밀번호 형식 오류")
@@ -289,6 +291,8 @@ public class SignUp extends AppCompatActivity {
                                                     editText_UserID.setClickable(false);
                                                     editText_UserID.setFocusable(false);
                                                     editText_UserID.setBackgroundColor(Color.GRAY);
+                                                    checkAndGotoMain.setEnabled(true);
+
 
 
                                                 }
