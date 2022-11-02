@@ -24,6 +24,10 @@
     targetSdk 32,
     versionCode 1,
     versionName "1.0"
+    
+  -ADB:
+    
+    pixel2 Size:5.0" 1080x1920 420dpi
 
 <hr />
 
